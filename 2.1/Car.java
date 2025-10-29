@@ -4,6 +4,7 @@ public class Car {
   private String typeName;
   private double maxGasoline;
   private double maxSpeed;
+  // Task 4
   private boolean cruiseControlOn;
   private double targetSpeed;
   private final double MIN_CRUISE_SPEED = 40;
@@ -30,6 +31,7 @@ public class Car {
   }
 
   public void accelerate() {
+    // Task 4
     if (cruiseControlOn) {
       if (speed < targetSpeed) {
         speed += 10;
@@ -44,6 +46,7 @@ public class Car {
       }
 
       if (speed < MIN_CRUISE_SPEED || speed > MAX_CRUISE_SPEED) {
+        // Task 4
         cruiseControlOn = false;
       }
     } else {
@@ -59,6 +62,7 @@ public class Car {
   }
 
   public void decelerate(int amount) {
+    // Task 4
     if (cruiseControlOn) {
       accelerate();
     } else {
@@ -96,6 +100,7 @@ public class Car {
     return maxGasoline;
   }
 
+  // Task 4
   public boolean setTargetSpeed(double target) {
     if (target >= MIN_CRUISE_SPEED && target <= MAX_CRUISE_SPEED) {
       targetSpeed = target;
@@ -104,10 +109,12 @@ public class Car {
     return false;
   }
 
+  // Task 4
   public double getTargetSpeed() {
     return targetSpeed;
   }
 
+  // Task 4
   public boolean turnOnCruiseControl() {
     if (targetSpeed == 0) {
       return false;
@@ -119,10 +126,12 @@ public class Car {
     return true;
   }
 
+  // Task 4
   public void turnOffCruiseControl() {
     cruiseControlOn = false;
   }
 
+  // Task 4
   public boolean isCruiseControlOn() {
     return cruiseControlOn;
   }

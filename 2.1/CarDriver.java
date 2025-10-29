@@ -8,6 +8,7 @@ public class CarDriver {
       System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
     }
 
+    // Task 4
     System.out.println("=== Testing Cruise Control ===");
 
     boolean result = myCar.turnOnCruiseControl();
@@ -33,6 +34,7 @@ public class CarDriver {
       System.out.println("Cruise control turned OFF");
     }
 
+    // Task 4
     System.out.println("=== Testing Invalid Target Speed ===");
     result = myCar.setTargetSpeed(250);
     System.out.println("Set target speed to 250: " + (result ? "Success" : "Failed - exceeds max cruise speed"));
