@@ -20,6 +20,7 @@ public class Car {
     targetSpeed = 0;
   }
 
+  // Task 3
   public Car(String typeName, double maxGasoline, double maxSpeed) {
     speed = 0;
     gasolineLevel = 0;
