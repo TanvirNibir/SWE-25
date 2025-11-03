@@ -52,5 +52,26 @@ I am learning Java Object-Oriented Programming through a comprehensive course co
 
 ## Progress
 
-Currently working through Module 1 - Java Fundamentals, building a strong foundation in programming basics and object-oriented concepts.
+### Completed Modules
+- ✅ **Module 1: Java Fundamentals** - Completed all sections (1.1, 1.2, 1.3, 1.4)
+- ✅ **Module 2: Object-Oriented Basics** - Completed all sections (2.1, 2.2, 2.3)
+
+### Current Module
+- 🚧 **Module 3: Advanced OOP Concepts** - Currently working on 3.1 (Inheritance)
+
+### Project Structure
+
+#### Module 1: Java Fundamentals
+- **1.1**: Basic Java programs (Cat, task exercises)
+- **1.2**: Conversion programs (FahrenheitToCelsius, MedievalUnitsConverter, TriangleHypotenuse)
+- **1.3**: Control structure exercises (4 tasks)
+- **1.4**: Array exercises (3 tasks)
+
+#### Module 2: Object-Oriented Basics
+- **2.1**: Class and object implementations (Car, CoffeeMaker, Television)
+- **2.2**: Collections practice (GroceryListManager)
+- **2.3**: Association concepts (Library system with Book and User classes)
+
+#### Module 3: Advanced OOP Concepts
+- **3.1**: Inheritance demonstrations (Shape hierarchy with Circle, Rectangle, Triangle; Car inheritance with SportsCar and Bus)
 
