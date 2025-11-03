@@ -1,10 +1,13 @@
 import java.util.ArrayList;
 
+// Task 6
 public class User {
+  // Task 6
   private String name;
   private int age;
   private ArrayList<Book> borrowedBooks;
 
+  // Task 6
   public User(String name, int age) {
     this.name = name;
     this.age = age;

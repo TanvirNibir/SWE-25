@@ -1,3 +1,4 @@
+// Task 3: Shape hierarchy
 public class Triangle extends Shape {
   private double base;
   private double height;

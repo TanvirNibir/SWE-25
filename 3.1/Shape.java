@@ -1,3 +1,4 @@
+// Task 3: Shape hierarchy
 public class Shape {
   protected String color;
 

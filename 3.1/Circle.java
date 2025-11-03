@@ -1,3 +1,4 @@
+// Task 3: Shape hierarchy
 public class Circle extends Shape {
   private double radius;
 

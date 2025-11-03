@@ -1,3 +1,4 @@
+// Task 1: Sports car
 public class SportsCar extends Car {
   private static final double ACCELERATION_BOOST = 1.5;
 

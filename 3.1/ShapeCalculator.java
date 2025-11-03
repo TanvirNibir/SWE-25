@@ -1,3 +1,4 @@
+// Task 3: Shape hierarchy | Task 4: Shape properties
 public class ShapeCalculator {
   public static void main(String[] args) {
     System.out.println("Shape Calculator\n");

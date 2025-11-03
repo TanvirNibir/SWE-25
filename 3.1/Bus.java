@@ -1,3 +1,4 @@
+// Task 2: Bus
 public class Bus extends Car {
   private int currentPassengers;
   private int maxPassengers;

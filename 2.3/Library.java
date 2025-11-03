@@ -1,15 +1,21 @@
 import java.util.ArrayList;
 
+// Task 1
 public class Library {
+  // Task 1
   private ArrayList<Book> books = new ArrayList<>();
+
+  // Task 6
   private ArrayList<User> users = new ArrayList<>();
 
+  // Task 1
   public void addBook(Book book) {
     if (book != null) {
       books.add(book);
     }
   }
 
+  // Task 1
   public void displayBooks() {
     System.out.println("Library Catalog:");
     if (books.isEmpty()) {
@@ -22,6 +28,7 @@ public class Library {
     }
   }
 
+  // Task 1
   public void findBooksByAuthor(String author) {
     if (author == null || author.trim().isEmpty()) {
       System.out.println("Error: Author name cannot be empty.");
@@ -41,6 +48,7 @@ public class Library {
     }
   }
 
+  // Task 2
   public void borrowBook(String title) {
     if (title == null || title.trim().isEmpty()) {
       System.out.println("Error: Book title cannot be empty.");
@@ -62,6 +70,7 @@ public class Library {
     }
   }
 
+  // Task 2
   public void returnBook(Book book) {
     if (book == null) {
       System.out.println("Error: Cannot return a null book.");
@@ -77,6 +86,7 @@ public class Library {
     System.out.println("Book \"" + book.getTitle() + "\" has been returned to the library.");
   }
 
+  // Task 3
   public boolean isBookAvailable(String title) {
     if (title == null || title.trim().isEmpty()) {
       return false;
@@ -90,6 +100,7 @@ public class Library {
     return false;
   }
 
+  // Task 5
   public double getAverageBookRating() {
     if (books.isEmpty()) {
       return 0.0;
@@ -108,6 +119,7 @@ public class Library {
     return totalRating / booksWithRatings;
   }
 
+  // Task 5
   public Book getMostReviewedBook() {
     if (books.isEmpty()) {
       return null;
@@ -124,6 +136,7 @@ public class Library {
     return mostReviewed;
   }
 
+  // Task 6
   public void addUser(User user) {
     if (user != null) {
       users.add(user);
