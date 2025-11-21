@@ -1,5 +1,3 @@
-package src;
-
 interface IVehicle {
     void start();
 
