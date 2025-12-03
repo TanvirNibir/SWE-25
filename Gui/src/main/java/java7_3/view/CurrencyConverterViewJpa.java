@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java7_3.controller.CurrencyController;
 import java7_3.dao.CurrencyJpaDao;
+import java7_3.dao.TransactionJpaDao;
 import java7_3.model.CurrencyModel;
 
 public class CurrencyConverterViewJpa extends Application {
@@ -18,11 +19,12 @@ public class CurrencyConverterViewJpa extends Application {
     @Override
     public void start(Stage stage) {
         CurrencyJpaDao dao = new CurrencyJpaDao();
+        TransactionJpaDao transactionDao = new TransactionJpaDao();
         CurrencyModel model;
         CurrencyController controller;
         try {
             model = new CurrencyModel(dao);
-            controller = new CurrencyController(model, dao);
+            controller = new CurrencyController(model, dao, transactionDao);
         } catch (Exception e) {
             showStartupError("Database error on startup: " + e.getMessage());
             return;

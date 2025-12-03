@@ -13,8 +13,8 @@
             <property name="jakarta.persistence.jdbc.password" value="password"/>
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
 
-            <!-- Use existing schema created in 7.1 -->
-            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+            <!-- Let JPA manage schema for Currency and Transaction entities in this assignment -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
 
             <!-- Hibernate dialect property -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>

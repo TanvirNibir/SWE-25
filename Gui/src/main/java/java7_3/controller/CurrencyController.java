@@ -1,19 +1,23 @@
 package java7_3.controller;
 
 import entity.Currency;
+import entity.Transaction;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import java7_3.dao.CurrencyJpaDao;
+import java7_3.dao.TransactionJpaDao;
 import java7_3.model.CurrencyModel;
 
 public class CurrencyController {
 
     private final CurrencyModel model;
     private final CurrencyJpaDao dao;
+    private final TransactionJpaDao transactionDao;
 
-    public CurrencyController(CurrencyModel model, CurrencyJpaDao dao) {
+    public CurrencyController(CurrencyModel model, CurrencyJpaDao dao, TransactionJpaDao transactionDao) {
         this.model = model;
         this.dao = dao;
+        this.transactionDao = transactionDao;
     }
 
     public CurrencyModel getModel() {
@@ -35,7 +39,16 @@ public class CurrencyController {
         double fromRate = from.getRateToUSD();
         double toRate = to.getRateToUSD();
         double amountInUSD = amount / fromRate;
-        return amountInUSD * toRate;
+        double result = amountInUSD * toRate;
+
+        try {
+            Transaction tx = new Transaction(from, to, amount, result);
+            transactionDao.persist(tx);
+        } catch (Exception e) {
+            throw new Exception("Failed to store transaction: " + e.getMessage());
+        }
+
+        return result;
     }
 
     public void addCurrency(String abbreviation, String name, String rateText) throws Exception {
