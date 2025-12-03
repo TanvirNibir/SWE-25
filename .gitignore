@@ -1,12 +1,20 @@
-## IntelliJ IDEA project files
+## IntelliJ IDEA / VS Code project files
 .idea/
 *.iml
-.vscode
+.vscode/
+
 ## Build and output directories
 out/
 target/
 
+## Java build artifacts
+*.class
+
 ## OS-specific files
 .DS_Store
 
+## Editor / backup files
+*~
+*.swp
+*.swo
 
