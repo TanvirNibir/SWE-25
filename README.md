@@ -58,9 +58,12 @@ I am learning Java Object-Oriented Programming through a comprehensive course co
 - ✅ **Module 3: Advanced OOP Concepts** - Completed all sections (3.10, 3.20, 3.30, 3.4)
 - ✅ **Module 4: Development Tools** - Completed section 4.1
 - ✅ **Module 5: Concurrency** - Completed all sections (5.1, 5.2)
+- ✅ **Module 6: GUI Development** - JavaFX GUI projects using the MVC pattern
+- ✅ **Module 7: Database Integration** - SQL and JDBC-based persistence
+- ✅ **Module 8: Advanced Topics** - Unit testing, TDD, lambdas, and functional-style programming
 
-### Current Module
-- 🚧 **Module 6: GUI Development** - Not yet started
+### Current Focus
+- 🔁 Refining existing solutions, improving code quality, and experimenting with more advanced patterns and tools
 
 ## Project Structure
 
@@ -88,6 +91,19 @@ I am learning Java Object-Oriented Programming through a comprehensive course co
 - **5.1**: Threads (2 tasks covering thread creation and management)
 - **5.2**: Synchronization (2 tasks covering thread synchronization and thread-safe operations)
 
+### Module 6: GUI Development
+- **6.10**: Maven-based JavaFX GUI setup and foundations
+- **Gui**: Full JavaFX currency converter application using MVC and JPA-style persistence
+
+### Module 7: Database Integration
+- **7.1**: SQL scripts for schema and sample data (`currency_converter.sql`, `queries.sql`)
+- **7.2**: JDBC-based database interaction and query execution
+
+### Module 8: Advanced Topics
+- **8.1**: Unit tests for existing code (JUnit, assertions, and test structure)
+- **8.2**: Test-Driven Development workflows for new features
+- **8.3**: Lambda expressions and functional-style utilities
+
 ## Repository Structure
 
 ```
@@ -105,7 +121,14 @@ SWE-25/
 ├── 3.4/           # Data Streams and Exceptions
 ├── 4.1/           # Version Control and AI-assisted Coding
 ├── 5.1/           # Threads
-└── 5.2/           # Synchronization
+├── 5.2/           # Synchronization
+├── 6.10/          # GUI foundations (Maven JavaFX project)
+├── 7.1/           # SQL scripts for database setup and queries
+├── 7.2/           # JDBC-based database exercises
+├── 8.1/           # Unit testing (Maven project)
+├── 8.2/           # Test-Driven Development (Maven project)
+├── 8.3/           # Lambda expressions and functional programming (Maven project)
+└── Gui/           # Full JavaFX currency converter application
 ```
 
 ## Technologies Used
@@ -117,14 +140,23 @@ SWE-25/
 
 ## Getting Started
 
-Each module directory contains:
+Each early module directory (1.x–5.x) contains:
 - Source code files (`.java`) in the `src/` directory
 - IntelliJ IDEA module file (`.iml`)
 
-To run any program:
-1. Navigate to the specific module directory
+To run a simple (non-Maven) program:
+1. Navigate to the specific module directory (for example, `cd 1.20`)
 2. Compile the Java files: `javac src/*.java`
 3. Run the main class: `java src/MainClassName`
+
+Maven-based modules (such as `6.10`, `8.1`, `8.2`, `8.3`, and `Gui`) contain:
+- A `pom.xml` describing dependencies and build configuration
+- Source code in `src/main/java` and tests in `src/test/java` (where applicable)
+
+To work with a Maven-based module:
+1. Navigate into the module directory (for example, `cd 8.1`)
+2. Run tests or build with: `mvn test` or `mvn clean package`
+3. Open the module in IntelliJ as a Maven project for easier running and debugging
 
 ## Git Ignore and Build Outputs
 
