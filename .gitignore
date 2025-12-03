@@ -1,0 +1,12 @@
+## IntelliJ IDEA project files
+.idea/
+*.iml
+.vscode
+## Build and output directories
+out/
+target/
+
+## OS-specific files
+.DS_Store
+
+

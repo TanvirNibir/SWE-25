@@ -126,6 +126,11 @@ To run any program:
 2. Compile the Java files: `javac src/*.java`
 3. Run the main class: `java src/MainClassName`
 
+## Git Ignore and Build Outputs
+
+- IntelliJ IDEA project configuration files (such as `.idea/` and `*.iml`) are not committed to version control.
+- Generated build and output directories such as `out/` and Maven `target/` folders are ignored, since they can always be recreated from the source.
+
 ## Notes
 
 - All code follows Java best practices and OOP principles
