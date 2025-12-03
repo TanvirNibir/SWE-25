@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/1.10/1.10.iml" filepath="$PROJECT_DIR$/1.10/1.10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.20/1.20.iml" filepath="$PROJECT_DIR$/1.20/1.20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.30/1.30.iml" filepath="$PROJECT_DIR$/1.30/1.30.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.40/1.40.iml" filepath="$PROJECT_DIR$/1.40/1.40.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.10/2.10.iml" filepath="$PROJECT_DIR$/2.10/2.10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.20/2.20.iml" filepath="$PROJECT_DIR$/2.20/2.20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.3/2.3.iml" filepath="$PROJECT_DIR$/2.3/2.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.30/2.30.iml" filepath="$PROJECT_DIR$/2.30/2.30.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.10/3.10.iml" filepath="$PROJECT_DIR$/3.10/3.10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.20/3.20.iml" filepath="$PROJECT_DIR$/3.20/3.20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.30/3.30.iml" filepath="$PROJECT_DIR$/3.30/3.30.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.1/5.1.iml" filepath="$PROJECT_DIR$/5.1/5.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.2/5.2.iml" filepath="$PROJECT_DIR$/5.2/5.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SWE-25.iml" filepath="$PROJECT_DIR$/SWE-25.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.4/Task3_4.iml" filepath="$PROJECT_DIR$/3.4/Task3_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4.1/java4_1.iml" filepath="$PROJECT_DIR$/4.1/java4_1.iml" />
+    </modules>
+  </component>
+</project>

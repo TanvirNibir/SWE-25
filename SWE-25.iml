@@ -13,6 +13,9 @@
       <sourceFolder url="file://$MODULE_DIR$/3.1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/3.2" isTestSource="false" packagePrefix="src" />
       <sourceFolder url="file://$MODULE_DIR$/3.3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Gui/src/main/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/8.3/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Gui/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

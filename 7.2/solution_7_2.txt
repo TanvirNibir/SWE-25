@@ -1,0 +1,78 @@
+Database-enhanced currency converter (submodule 7.2) – implementation summary
+
+1. Refactored project structure (view / controller / dao / entity / datasource)
+   - View (UI): package java6_2.view
+       * CurrencyConverterView
+   - Controller (application logic): package java6_2.controller
+       * CurrencyController
+   - Model (GUI-facing model): package java6_2.model
+       * CurrencyModel
+   - DAO (data access layer): package dao
+       * CurrencyDao
+   - Entity classes: package entity
+       * Currency
+   - Datasource class: package datasource
+       * MariaDbConnection
+
+2. Database connectivity
+   - Added MariaDB JDBC dependency to Gui/pom.xml:
+       * org.mariadb.jdbc : mariadb-java-client : 3.1.2
+   - Implemented datasource.MariaDbConnection to open a single JDBC connection to:
+       * jdbc:mariadb://localhost:3306/currency_converter
+       * user: appuser
+       * password: password
+
+3. CurrencyDao with method to fetch exchange rates
+   - Class: dao.CurrencyDao
+   - Methods:
+       * double getRate(String abbreviation)
+             - Executes: SELECT rate_to_usd FROM CURRENCY WHERE abbreviation = ?
+             - Returns the rate for a given currency abbreviation.
+       * List<entity.Currency> getAllCurrencies()
+             - Executes: SELECT abbreviation, name, rate_to_usd FROM CURRENCY ORDER BY abbreviation
+             - Returns all currencies as entity.Currency objects.
+
+4. Controller uses CurrencyDao to fetch exchange rates
+   - Class: java6_2.controller.CurrencyController
+   - Constructor:
+       * CurrencyController(CurrencyModel model, CurrencyDao currencyDao)
+   - Method:
+       * double handleConversion(String amountText, entity.Currency from, entity.Currency to)
+             - Parses the amount from the text field.
+             - Reads fromRate = currencyDao.getRate(from.getAbbreviation()).
+             - Reads toRate   = currencyDao.getRate(to.getAbbreviation()).
+             - Computes amountInUSD = amount / fromRate.
+             - Returns converted = amountInUSD * toRate.
+
+5. Application works as before, but exchange rates are fetched from the database
+   - Entity:
+       * entity.Currency (abbreviation, name, rateToUSD)
+   - Model:
+       * java6_2.model.CurrencyModel
+             - Loads currencies from the DB using CurrencyDao.getAllCurrencies()
+             - Exposes them as an ObservableList<entity.Currency> for the UI.
+   - View:
+       * java6_2.view.CurrencyConverterView
+             - Builds the same GUI layout as in 6.2.
+             - Populates ComboBox<entity.Currency> from model.getCurrencies().
+             - On button click, calls controller.handleConversion(...)
+             - Displays the computed result in the result text field.
+   - Main:
+       * java6_2.Main launches CurrencyConverterView.
+
+6. Error handling when the database is not available
+   - Startup error (loading currencies):
+       * In CurrencyConverterView.start:
+             - Wraps creation of CurrencyModel in try/catch.
+             - On failure, shows an Alert with message like
+               "Database error on startup: ..." and returns without building the rest of the UI.
+   - Runtime error (conversion):
+       * In CurrencyController.handleConversion:
+             - Catches SQL / DAO exceptions and rethrows as a user-facing "Database error: ..." message.
+       * In CurrencyConverterView button handler:
+             - Catches Exception from handleConversion and calls controller.showError(...),
+               which shows an Alert dialog instead of crashing the app.
+
+All six required items (1–6) of the 7.2 assignment are implemented in the Gui project under the java6_2 packages and supporting dao/entity/datasource packages.
+
+
