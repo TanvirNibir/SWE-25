@@ -1,6 +1,7 @@
-package view;
+package java6_2.view;
 
-import controller.CurrencyController;
+import dao.CurrencyDao;
+import entity.Currency;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -8,16 +9,28 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import model.CurrencyModel;
-import model.CurrencyModel.Currency;
+import java6_2.controller.CurrencyController;
+import java6_2.model.CurrencyModel;
+
+import java.util.List;
 
 public class CurrencyConverterView extends Application {
 
     @Override
     public void start(Stage stage) {
-        // Model + Controller
-        CurrencyModel model = new CurrencyModel();
-        CurrencyController controller = new CurrencyController(model);
+        CurrencyDao currencyDao = new CurrencyDao();
+        CurrencyModel model;
+        try {
+            model = new CurrencyModel(currencyDao);
+        } catch (Exception e) {
+            // If the database is not available, fall back to an in-memory demo model
+            model = createFallbackModel();
+            showStartupWarning(
+                    "Database is not available. Running with demo currency data only.\n\n"
+                            + "Details: " + e.getMessage()
+            );
+        }
+        CurrencyController controller = new CurrencyController(model, currencyDao);
 
         // Root layout
         BorderPane root = new BorderPane();
@@ -95,4 +108,20 @@ public class CurrencyConverterView extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+    private CurrencyModel createFallbackModel() {
+        List<Currency> demoCurrencies = List.of(
+                new Currency("USD", "US Dollar", 1.0),
+                new Currency("EUR", "Euro", 0.93),
+                new Currency("GBP", "British Pound", 0.80),
+                new Currency("JPY", "Japanese Yen", 147.0)
+        );
+        return new CurrencyModel(demoCurrencies);
+    }
+
+    private void showStartupWarning(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING, message, ButtonType.OK);
+        alert.showAndWait();
+    }
 }
+

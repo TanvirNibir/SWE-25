@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import model.Pet;
+import java6_3.model.Pet;
 
 public class PetView extends Application {
     private double targetX = -1;

@@ -1,6 +1,6 @@
 package java6_3.controller;
 
-import model.Pet;
+import java6_3.model.Pet;
 
 public class PetController {
     private final Pet pet;
