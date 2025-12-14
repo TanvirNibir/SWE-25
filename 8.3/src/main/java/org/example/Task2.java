@@ -1,45 +1,56 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-/**
- * Task 2: Collection operations with lambdas (no Stream API).
- */
 public class Task2 {
-
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(Arrays.asList(10, 5, 8, 20, 15, 3, 12));
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(5);
+        numbers.add(8);
+        numbers.add(20);
+        numbers.add(15);
+        numbers.add(3);
+        numbers.add(12);
 
-        System.out.println("=== Original numbers ===");
-        printNumbers(numbers);
-
-        // 1) Filter out even numbers using removeIf and a lambda
-        numbers.removeIf(n -> n % 2 == 0);
-
-        System.out.println("\n=== After removing even numbers ===");
-        printNumbers(numbers);
-
-        // 2) Double the remaining (odd) numbers using replaceAll and a lambda
-        numbers.replaceAll(n -> n * 2);
-
-        System.out.println("\n=== After doubling odd numbers ===");
-        printNumbers(numbers);
-
-        // 3) Sum the numbers using forEach and a lambda.
-        //    We use a one-element array to hold the mutable sum reference.
-        final int[] sumHolder = new int[1];
-        numbers.forEach(n -> sumHolder[0] += n);
-        int sum = sumHolder[0];
-
-        System.out.println("\nSum of all numbers: " + sum);
-    }
-
-    private static void printNumbers(List<Integer> numbers) {
-        numbers.forEach(n -> System.out.print(n + " "));
+        System.out.println("Original list: " + numbers);
         System.out.println();
+
+        numbers.removeIf(n -> n % 2 == 0);
+        System.out.println("After filtering out even numbers: " + numbers);
+        System.out.println();
+
+        numbers.replaceAll(n -> n * 2);
+        System.out.println("After doubling odd numbers: " + numbers);
+        System.out.println();
+
+        final int[] sum = {0};
+        numbers.forEach(n -> sum[0] += n);
+        System.out.println("Sum of all numbers: " + sum[0]);
+        System.out.println();
+
+        System.out.println("=== Complete Workflow Demonstration ===");
+        List<Integer> originalNumbers = new ArrayList<>();
+        originalNumbers.add(10);
+        originalNumbers.add(5);
+        originalNumbers.add(8);
+        originalNumbers.add(20);
+        originalNumbers.add(15);
+        originalNumbers.add(3);
+        originalNumbers.add(12);
+
+        System.out.println("Step 1 - Original list: " + originalNumbers);
+
+        List<Integer> filteredNumbers = new ArrayList<>(originalNumbers);
+        filteredNumbers.removeIf(n -> n % 2 == 0);
+        System.out.println("Step 2 - After filtering even numbers: " + filteredNumbers);
+
+        filteredNumbers.replaceAll(n -> n * 2);
+        System.out.println("Step 3 - After doubling: " + filteredNumbers);
+
+        final int[] totalSum = {0};
+        filteredNumbers.forEach(n -> totalSum[0] += n);
+        System.out.println("Step 4 - Sum: " + totalSum[0]);
     }
 }
-
-

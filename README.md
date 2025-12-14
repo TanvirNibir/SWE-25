@@ -102,7 +102,8 @@ I am learning Java Object-Oriented Programming through a comprehensive course co
 ### Module 8: Advanced Topics
 - **8.1**: Unit tests for existing code (JUnit, assertions, and test structure)
 - **8.2**: Test-Driven Development workflows for new features
-- **8.3**: Lambda expressions and functional-style utilities
+- **8.3**: Lambda expressions and functional interfaces (sorting, filtering, forEach, removeIf, replaceAll)
+- **8.4**: Functional programming with Streams API (map/filter/reduce, mean calculation, immutable transformations)
 
 ## Repository Structure
 
@@ -127,7 +128,8 @@ SWE-25/
 ├── 7.2/           # JDBC-based database exercises
 ├── 8.1/           # Unit testing (Maven project)
 ├── 8.2/           # Test-Driven Development (Maven project)
-├── 8.3/           # Lambda expressions and functional programming (Maven project)
+├── 8.3/           # Lambda expressions and functional interfaces (Maven project)
+├── 8.4/           # Functional programming with Streams API (Maven project)
 └── Gui/           # Full JavaFX currency converter application
 ```
 
